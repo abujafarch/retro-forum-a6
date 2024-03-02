@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Inter:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.font-inter{
+    font-family: "Inter", sans-serif;
+}
+.font-mulish{
+    font-family: "Mulish", sans-serif;
+}
+.nav-icon{
+    position: relative;
+}
+.nav-icon::after{
+    transition: 1s;
+}
+.nav-icon:hover::after{
+    content: 'Home';
+    background-color: #12132D;
+    color: white;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    padding: 8px;
+    border-radius: 5px;
+    position: absolute;
+    font-size: 12px;
+    top: -40px;
+    left: 0;
+    /* transform: translateX(-50%); */
+    
+}
+
+
+
+
+
+
+/* media query here starts here  */
+@media only screen and (max-width:640px) {
+    
+}
+@media only screen and (min-width: 640px) and (max-width: 768px){
+
+}
+@media only screen and (min-width: 768px) and (max-width: 992px){
+
+}
+@media only screen and (min-width: 992px) and (max-width: 1024px){
+
+}
+@media only screen and (min-width: 1024px) and (max-width: 1200px){
+
+}
