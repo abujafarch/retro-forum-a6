@@ -58,7 +58,17 @@
     background-position: bottom;
     background-repeat: no-repeat;
 }
-
+.avatar::after{
+    content: ' ';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    right: 0;
+    top: 0;
+    background-color: #019c4e;
+    transform: translate(25%, -25%);
+}
 
 
 
@@ -98,7 +108,7 @@
         font-size: 20px;
     }
     .search input{
-        width: 140px;
+        width: 150px;
         font-size: 16px;
     }
     .search button{
