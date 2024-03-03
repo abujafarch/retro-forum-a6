@@ -62,6 +62,28 @@
         justify-content: center;
         align-items: center;
     }
+    .banner-left h1{ 
+        font-size: 32px;
+        line-height: 55px;
+    }
+    .banner-left p{
+        font-size: 18px;
+        line-height: normal;
+    }
+    .banner-right{
+        padding: 30px;
+    }
+    .banner-right p{
+        font-size: 20px;
+    }
+    .search input{
+        width: 140px;
+        font-size: 16px;
+    }
+    .search button{
+        padding: 8px 16px;
+        font-size: 18px;
+    }
 }
 @media only screen and (min-width: 640px) and (max-width: 768px){
 
