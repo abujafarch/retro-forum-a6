@@ -27,6 +27,16 @@
     /* transform: translateX(-50%); */
     
 }
+.ovimot{
+    background: linear-gradient(to right, #7276EF, #7d26e025);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.banner-bg-img{
+    background-image: url(../images/bgbanner.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
 
 
 
@@ -37,11 +47,40 @@
 @media only screen and (max-width:640px) {
     
 }
+@media only screen and (max-width:768px) {
+    .banner-bg-img{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 12px;
+        height: fit-content;
+    }
+    .banner-left{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+}
 @media only screen and (min-width: 640px) and (max-width: 768px){
 
 }
 @media only screen and (min-width: 768px) and (max-width: 992px){
-
+    .banner-left h1{ 
+        font-size: 48px;
+        line-height: 60px;
+    }
+    .banner-left p{
+        font-size: 18px;
+        line-height: normal;
+    }
+    .banner-right{
+        padding: 36px;
+    }
+    .banner-right p{
+        font-size: 22px;
+    }
 }
 @media only screen and (min-width: 992px) and (max-width: 1024px){
 
