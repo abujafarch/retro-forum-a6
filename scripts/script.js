@@ -17,12 +17,12 @@ function loadSinglePost(posts){
         const views = post.view_count
         const time = post.posted_time
         discussPosts(title, image, isActive, category, author, description,comments, views, time)
+        // createMarkAsRead(title, views)
         console.log(post)
     })
 }
-
+let i = 1
 loadData()
-
 function discussPosts(title, image, isActive, category, author, description,comments, views, time){
     const letsDiscussPost = document.getElementById('lets-discuss-posts')
     const card = document.createElement('div')
@@ -37,45 +37,34 @@ function discussPosts(title, image, isActive, category, author, description,comm
         <div class="flex justify-between items-center">
             <div class="flex gap-3 sm:gap-7 items-center text-[#12132D99] font-inter">
                 <p><i class="fa-regular fa-comment-dots"></i> <span>${comments}</span></p>
-                <p><i class="fa-regular fa-eye"></i> <span>1,568</span>${views}</p>
+                <p><i class="fa-regular fa-eye"></i> <span>${views}</span></p>
                 <p><i class="fa-regular fa-clock"></i> <span>${time} min</span></p>
             </div>
-            <div id="mark-as-read-icon" class="cursor-pointer"><img src="images/mail.png"></div>
+            <div id = "mark-as-read-${i}" class="cursor-pointer"><img src="images/mail.png"></div>
         </div>
     </div>
     `
     letsDiscussPost.appendChild(card)
+    markAsReadClicked(`mark-as-read-${i}`, title, views)
+    i++
 }
 
 
+const markAsRead = document.getElementById('mark-as-read')
+function markAsReadClicked(markAsReadItemId, title, views){
+    const markAsReadItem = document.getElementById(markAsReadItemId)
+    markAsReadItem.addEventListener('click', function(){
+        const item = document.createElement('div')
+        item.classList = ('p-4 bg-white rounded-2xl flex justify-between items-center gap-3')
+        item.innerHTML = `
+        <h4 class="font-mulish font-semibold ">${title}</h4>
+        <p class="text-[#12132D99] font-inter font-medium flex gap-2 items-center"><i class="fa-regular fa-eye"></i> <span>${views}</span></p>
+        `
+        markAsRead.appendChild(item)
+    })
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const markAsReadIcon = document.getElementById('mark-as-read-icon') 
-//         markAsReadIcon.addEventListener('click', function(){
-    
-// const markAsRead = document.getElementById('mark-as-read')
-//             const item = document.createElement('div')
-//             item.classList= ('p-4 bg-white rounded-2xl flex justify-between items-center gap-3')
-//             item.innerHTML = `
-//             <h4 class="font-mulish font-semibold ">${post.title}</h4>
-//             <p class="text-[#12132D99] font-inter font-medium flex gap-2 items-center"><i class="fa-regular fa-eye"></i> <span>${post.view_count}</span></p>
-//             `
-//             markAsRead.appendChild(item)
-//         } )
-//         console.log(post)
 
 
 
