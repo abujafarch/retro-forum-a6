@@ -69,6 +69,39 @@ function markAsReadClicked(markAsReadItemId, title, views){
 }
 
 
+const loadLatestPost = async() =>{
+    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
+    const data = await res.json()
+    data.forEach(post=>{
+        const title = post.title
+        const coverImage = post.cover_image
+        const author = post.author.name
+        const designation = post.author.designation
+        const date = post.author.posted_date
+        const profileImage = post.profile_image
+        const description = post.description
+        latestPost(title, coverImage, author, designation, date, profileImage, description)
+    })
+    console.log(data)
+}
+loadLatestPost()
+
+const latestPosts = document.getElementById('latest-posts')
+function latestPost(title, coverImage, author, designation, date, profileImage, description){
+    const post = document.createElement('div')
+    post.classList = ('sm:p-6 p-4 min-w-[320px] flex-1 border-[1px] border-[#12132D26] rounded-3xl font-mulish')
+    post.innerHTML = `
+        <img src="${coverImage}" class="w-full rounded-3xl">
+        <p class="font-medium text-[#12132D99] my-4"><i class="fa-regular fa-calendar"></i> ${date = date ? date : "No publish date"}</p>
+        <h4 class="text-[#12132D] font-extrabold text-lg mb-2">${title}</h4>
+        <p class="text-[#12132D99] font-medium mb-4">${description} </p>
+        <div class="flex gap-4 items-center">
+            <img src="${profileImage}" class="rounded-full w-11">
+            <div><p class="font-bold text-[#12132D]">${author}</p> <p class="text-[#12132D99] font-medium">${designation = designation ? designation : "Unknown"}</p></div>
+        </div>
+    `
+    latestPosts.appendChild(post)
+}
 
 
 
