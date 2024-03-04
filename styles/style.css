@@ -66,8 +66,13 @@
     border-radius: 50%;
     right: 0;
     top: 0;
-    background-color: #019c4e;
     transform: translate(25%, -25%);
+}
+.avatar-red::after{
+    background-color: #FF3434;
+}
+.avatar-green::after{
+    background-color: #019c4e;
 }
 
 
