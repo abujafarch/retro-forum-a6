@@ -67,12 +67,13 @@
     right: 0;
     top: 0;
     transform: translate(25%, -25%);
+    border: 2px solid white;
 }
 .avatar-red::after{
     background-color: #FF3434;
 }
 .avatar-green::after{
-    background-color: #019c4e;
+    background-color: #10B981;
 }
 
 

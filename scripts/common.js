@@ -1,4 +1,4 @@
-function isActive(isActive){
+function checkActive(isActive){
     if(isActive){
         return 'avatar-green'
     }
