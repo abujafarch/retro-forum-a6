@@ -1,3 +1,4 @@
+// let's discuss section here 
 const loadData = async() =>{
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
     const data = await res.json()
@@ -5,7 +6,9 @@ const loadData = async() =>{
     loadSinglePost(posts)    
 }
 
+const letsDiscussPost = document.getElementById('lets-discuss-posts')
 function loadSinglePost(posts){
+    letsDiscussPost.innerHTML = ''
     posts.forEach(post =>{
         const title = post.title
         const image = post.image
@@ -21,10 +24,9 @@ function loadSinglePost(posts){
         console.log(post)
     })
 }
-let i = 1
 loadData()
+let i = 1
 function discussPosts(title, image, isActive, category, author, description,comments, views, time){
-    const letsDiscussPost = document.getElementById('lets-discuss-posts')
     const card = document.createElement('div')
     card.classList = `p-5 lg:p-10 rounded-3xl bg-[#F3F3F5] flex justify-between items-start gap-5 sm:flex-row flex-col`
     card.innerHTML = `
@@ -51,6 +53,8 @@ function discussPosts(title, image, isActive, category, author, description,comm
 
 
 const markAsRead = document.getElementById('mark-as-read')
+const markAsCount = document.getElementById('mark-as-count')
+let n = 0;
 function markAsReadClicked(markAsReadItemId, title, views){
     const markAsReadItem = document.getElementById(markAsReadItemId)
     let isTrue = true;
@@ -63,6 +67,8 @@ function markAsReadClicked(markAsReadItemId, title, views){
             <p class="text-[#12132D99] font-inter font-medium flex gap-2 items-center"><i class="fa-regular fa-eye"></i> <span>${views}</span></p>
             `
             markAsRead.appendChild(item)
+            n++
+            markAsCount.innerText = n
             }
         isTrue = false;
     })    
@@ -103,7 +109,20 @@ function latestPost(title, coverImage, author, designation, date, profileImage, 
     latestPosts.appendChild(post)
 }
 
+const showBySearch = async (searchValue)=>{
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchValue}`)
+    const data = await res.json()
+    const posts = data.posts    
+    loadSinglePost(posts)
+}
 
+function getSearchInput(){
+    const searchInput = document.getElementById('search-input')
+    const searchBtn = document.getElementById('search-btn')
+    const searchValue = searchInput.value
+    showBySearch(searchValue)
+    console.log(searchValue)
+}
 
 
 

@@ -31,8 +31,8 @@
                     <h1 class="text-white leading-[80px] text-[64px] font-black">Welcome to the<br> <span class="ovimot"> Ovimot</span> Forum</h1>
                     <p class="mt-5 leading-9 text-[#FFFFFFCC] max-w-[455px] font-medium text-xl">Share your awesome opinion about any topic you like and that can help others.</p>
                     <div class="search max-w-[400px] py-2 pl-5 pr-2 bg-white flex justify-between rounded-[50px] mt-8">
-                        <input class="outline-none font-medium text-[#03071280] text-lg" type="text" placeholder="Search here anything">
-                        <button class="bg-[#797DFC] rounded-[30px] py-2 px-6 font-bold text-xl text-white">Search</button>
+                        <input id="search-input" class="outline-none font-medium text-[#03071280] text-lg" type="text" placeholder="Search here anything">
+                        <button onclick="getSearchInput()" id="search-btn" class="bg-[#797DFC] rounded-[30px] py-2 px-6 font-bold text-xl text-white">Search</button>
                     </div>
                 </div>
                 <!-- banner right  -->
@@ -76,8 +76,8 @@
                     </div> -->
                 </div>
                 <!-- let's discuss right side  -->
-                <div class="p-3 lg:p-6 bg-[#12132D0D] rounded-3xl h-fit flex gap-4 flex-col" id="mark-as-read">
-                    <div class="flex justify-between items-center"><h4 class="font-mulish font-bold text-xl text-[#12132D]">Title</h4> <p class="flex text-[#12132D99] font-medium justify-center items-center gap-1"><img src="images/frame-tik.png"> Mark as read (<span>0</span>)</p></div>
+                <div class="p-3 lg:p-6 bg-[#12132D0D] min-w-[300px] rounded-3xl h-fit flex gap-4 flex-col" id="mark-as-read">
+                    <div class="flex justify-between items-center"><h4 class="font-mulish font-bold text-xl text-[#12132D]">Title</h4> <p class="flex text-[#12132D99] font-medium justify-center items-center gap-1"><img src="images/frame-tik.png"> Mark as read (<span id="mark-as-count">0</span>)</p></div>
                     <!-- <div class="p-4 bg-white rounded-2xl flex justify-between items-center gap-3">
                         <h4 class="font-mulish font-semibold ">10 Kids Unaware of Their Halloween Costume</h4>
                         <p class="text-[#12132D99] font-inter font-medium flex gap-2 items-center"><i class="fa-regular fa-eye"></i> <span>1590</span></p>
