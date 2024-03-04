@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ovimot</title>
-    <link rel="stylesheet" href="styles/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="styles/style.css">
     <script src="https://kit.fontawesome.com/ae1eb9a664.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -51,29 +52,15 @@
             <!-- heading title here  -->
             <div class="text-center">
                 <h1 class="font-mulish font-black text-3xl sm:text-[40px] text-[#12132d]">Let's Discuss</h1>
-                <p class="max-w-[650px] mx-auto font-inter text-lg text-[#12132D99] font-medium mt-6">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+                <p class="max-w-[650px] mx-auto font-inter text-lg text-[#12132D99] font-medium mt-6">You can read post from Ovimot as your favorites topics. Our all of content fun and educational. So, your time will not waste</p>
             </div>
-            <div class="sm:mt-12 mt-6 flex gap-3 md:flex-row flex-col">
+            <div class="sm:mt-12 mt-6 flex gap-3 md:flex-row flex-col justify-between">
                 <!-- let's discuss left side  -->
-                <div id="lets-discuss-posts" class="flex flex-col gap-5">
-                    <!-- card 1 -->
-                    <!-- <div class="p-5 lg:p-10 rounded-3xl bg-[#F3F3F5] flex justify-between items-start gap-5 sm:flex-row flex-col">
-                        <div class="avatar avatar-red avatar-green relative w-[65px]"><img class="w-full rounded-xl" src="images/avatar.jpg"></div>
-                        <div class="flex-1">
-                            <div class="flex gap-5 text-[#12132DCC] font-inter text-sm font-medium"><p># <span>Music</span></p> <p>Author : Awlad Hossain</p></div>
-                            <h1 class="font-mulish font-bold text-xl mb-3">10 Kids Unaware of Their Halloween Costume</h1>
-                            <p class="text-[#12132D99] font-inter">It’s one thing to subject yourself to ha Halloween costume mishap because hey that’s your prerogative</p>
-                            <hr class="border-dashed border-[#12132D40] my-4">
-                            <div class="flex justify-between items-center">
-                                <div class="flex gap-4 sm:gap-7 items-center text-[#12132D99] font-inter">
-                                    <p><i class="fa-regular fa-comment-dots"></i> <span>560</span></p>
-                                    <p><i class="fa-regular fa-eye"></i> <span>1,568</span></p>
-                                    <p><i class="fa-regular fa-clock"></i> <span>5 min</span></p>
-                                </div>
-                                <div class="cursor-pointer"><img src="images/mail.png"></div>
-                            </div>
-                        </div>
-                    </div> -->
+                <div>
+                    <div id="loader" class="w-full h-32 flex justify-center items-center hidden"><span class="loading loading-ring loading-lg"></span></div>
+                    <div id="lets-discuss-posts" class="flex flex-col gap-5">
+                        <!-- cards will be load here -->
+                    </div>
                 </div>
                 <!-- let's discuss right side  -->
                 <div class="p-3 lg:p-6 bg-[#12132D0D] min-w-[300px] rounded-3xl h-fit flex gap-4 flex-col" id="mark-as-read">

@@ -51,7 +51,6 @@ function discussPosts(title, image, isActive, category, author, description,comm
     i++
 }
 
-
 const markAsRead = document.getElementById('mark-as-read')
 const markAsCount = document.getElementById('mark-as-count')
 let n = 0;
@@ -109,18 +108,20 @@ function latestPost(title, coverImage, author, designation, date, profileImage, 
     latestPosts.appendChild(post)
 }
 
+const loader = document.getElementById('loader')
 const showBySearch = async (searchValue)=>{
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchValue}`)
     const data = await res.json()
-    const posts = data.posts    
+    const posts = data.posts 
+    loader.classList.add('hidden')   
     loadSinglePost(posts)
 }
 
 function getSearchInput(){
     const searchInput = document.getElementById('search-input')
-    const searchBtn = document.getElementById('search-btn')
     const searchValue = searchInput.value
-    showBySearch(searchValue)
+    loader.classList.remove('hidden')
+    setTimeout(()=>{showBySearch(searchValue)}, 2000)
     console.log(searchValue)
 }
 

@@ -7,5 +7,3 @@ function checkActive(isActive){
     }
 }
 
-
-// console.log(`hello`)
