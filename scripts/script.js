@@ -53,15 +53,19 @@ function discussPosts(title, image, isActive, category, author, description,comm
 const markAsRead = document.getElementById('mark-as-read')
 function markAsReadClicked(markAsReadItemId, title, views){
     const markAsReadItem = document.getElementById(markAsReadItemId)
+    let isTrue = true;
     markAsReadItem.addEventListener('click', function(){
-        const item = document.createElement('div')
-        item.classList = ('p-4 bg-white rounded-2xl flex justify-between items-center gap-3')
-        item.innerHTML = `
-        <h4 class="font-mulish font-semibold ">${title}</h4>
-        <p class="text-[#12132D99] font-inter font-medium flex gap-2 items-center"><i class="fa-regular fa-eye"></i> <span>${views}</span></p>
-        `
-        markAsRead.appendChild(item)
-    })
+        if(isTrue){
+            const item = document.createElement('div')
+            item.classList = ('p-4 bg-white rounded-2xl flex justify-between items-center gap-3')
+            item.innerHTML = `
+            <h4 class="font-mulish font-semibold ">${title}</h4>
+            <p class="text-[#12132D99] font-inter font-medium flex gap-2 items-center"><i class="fa-regular fa-eye"></i> <span>${views}</span></p>
+            `
+            markAsRead.appendChild(item)
+            }
+        isTrue = false;
+    })    
 }
 
 
